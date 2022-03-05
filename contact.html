@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- MAP -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css"
+      type="text/css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" href="assets/images/favicon.svg" />
+    <title>Contato</title>
+  </head>
+
+  <body>
+    <!-- CABEÇALHO -->
+    <section class="top">
+      <div class="center">
+        <header>
+          <div class="logo">
+            <a href="/index.html"
+              ><img src="assets/images/logo.svg" alt="Logo E-market shopp"
+            /></a>
+          </div>
+          <ul class="nav">
+            <li>
+              <a href="/index.html">Home</a>
+            </li>
+            <li>
+              <a href="/about.html">Sobre</a>
+            </li>
+            <li>
+              <a href="/contact.html">Contato</a>
+            </li>
+          </ul>
+        </header>
+      </div>
+    </section>
+
+    <div class="contact center">
+      <div class="left">
+        <h2>Vamos conversar?</h2>
+        <p><b>Telefone:</b> (43) 9 9999-9999</p>
+        <p><b>E-mail:</b> meuemail@email.com</p>
+        <p>
+          <b>Endereço:</b> Rua Barão do Rio Branco, nº 0, Wenceslau Braz, PR,
+          centro
+        </p>
+
+        <div class="mapa-container map" id="map">
+          <script type="text/javascript">
+            var map = new ol.Map({
+              target: 'map',
+              layers: [
+                new ol.layer.Tile({
+                  source: new ol.source.OSM()
+                })
+              ],
+              view: new ol.View({
+                center: ol.proj.fromLonLat([-49.80736, -23.876698]),
+                zoom: 15
+              })
+            })
+          </script>
+        </div>
+      </div>
+
+      <div class="right">
+        <form action="">
+          <label class="sr-only" for-id="name">Digite seu nome completo</label>
+          <label class="sr-only" for-id="email">Digite seu e-mail</label>
+          <label class="sr-only" for-id="phone"
+            >Digite seu telefone com DDD</label
+          >
+          <label class="sr-only" for-id="text"
+            >Digite aqui a sua mensagem</label
+          >
+
+          <input
+            class="form"
+            id="name"
+            type="text"
+            placeholder="Nome completo"
+          />
+          <input class="form" id="email" type="text" placeholder="Seu e-mail" />
+          <input
+            class="form"
+            id="phone"
+            type="number"
+            placeholder="Telefone com DDD"
+          />
+          <select name="" id="">
+            <option value="">Geral</option>
+            <option value="">Suporte</option>
+          </select>
+          <textarea
+            name=""
+            id="text"
+            cols="30"
+            rows="10"
+            placeholder="Digite aqui a sua mensagem"
+          ></textarea>
+          <div class="send">
+            <input class="button" type="submit" value="Enviar" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="center">
+        <div class="links">
+          <div class="col-footer">
+            <h2>SUPORTE</h2>
+            <a href="#">Blog</a>
+            <a href="#">FAQ's</a>
+          </div>
+
+          <div class="col-footer">
+            <h2>CONSULTORIA</h2>
+            <a href="#">Metodologia</a>
+            <a href="#">Cases</a>
+          </div>
+
+          <div class="col-footer">
+            <h2>EMPRESA</h2>
+            <a href="/about.html">Sobre</a>
+            <a href="#">Política de privacidade</a>
+          </div>
+        </div>
+
+        <div class="logo-footer">
+          <a href="/index.html">
+            <img
+              class="logo"
+              src="assets/images/logo2.svg"
+              alt="Logo E-market shopp"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
